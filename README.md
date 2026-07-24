@@ -1,3 +1,7 @@
+# Points of Interest
+
+- It looks like the glyphs from the Cyrillic block (U+0400 to U+FE2F) were removed going from BC Sans v1 to v2. You can see this in the `comparisons/bc-sans-v2-vs-bc-sans-v1` output, or by opening up the two proofs `proofs/bc-sans-v1-regular-print` and `proofs/bc-sans-v2-regular-print/`
+
 # Font comparisons
 
 ## Noto Sans 2017 vs BC Sans v1
@@ -22,3 +26,41 @@ After changing the CSS class to use `new` instead of `old`, the glyphs appear as
 ![New encoded glyphs visible](./docs/images/noto-sans-2017-vs-bc-sans-v1-tofu-fixed.png)
 
 I've checked the original output of the `diffenator2 diff` command in rather than a manually fixed version.
+
+## BC Sans v1 vs BC Sans v2
+
+```sh
+diffenator2 diff --fonts-before ./fonts/bc-sans/v1/print/BCSans-Regular.ttf --fonts-after ./fonts/bc-sans/v2/print/BCSans-Regular.ttf -o comparisons/bc-sans-v1-vs-bc-sans-v2 --filter-styles "Regular"
+```
+
+## BC Sans v2 vs BC Sans v1
+
+This treats BC Sans v1 as the "new" font in order to see the Cyrillic block being "added".
+
+```sh
+diffenator2 diff --fonts-before ./fonts/bc-sans/v2/print/BCSans-Regular.ttf --fonts-after ./fonts/bc-sans/v1/print/BCSans-Regular.ttf -o comparisons/bc-sans-v2-vs-bc-sans-v1 --filter-styles "Regular"
+```
+
+# Font proofs
+
+## BC Sans v1 proof
+
+### Print
+
+```sh
+diffenator2 proof fonts/bc-sans/v1/print/BCSans-Regular.ttf -o proofs/bc-sans-v1-regular-print
+```
+
+## BC Sans v2 proof
+
+### Print
+
+```sh
+diffenator2 proof fonts/bc-sans/v2/print/BCSans-Regular.ttf -o proofs/bc-sans-v2-regular-print
+```
+
+### Web
+
+```sh
+diffenator2 proof fonts/bc-sans/v2/web/BCSans-Regular.ttf -o proofs/bc-sans-v2-regular-web
+```
