@@ -1,5 +1,6 @@
 # Points of Interest
 
+- The comparison between Noto Sans and BC Sans v1 `comparisons/noto-sans-2017-vs-bc-sans-v1` shows the Canadian Aboriginal syllabics being added to BC Sans
 - It looks like the glyphs from the Cyrillic block (U+0400 to U+FE2F) were removed going from BC Sans v1 to v2. You can see this in the `comparisons/bc-sans-v2-vs-bc-sans-v1` output, or by opening up the two proofs `proofs/bc-sans-v1-regular-print` and `proofs/bc-sans-v2-regular-print/`
 
 # Font comparisons
